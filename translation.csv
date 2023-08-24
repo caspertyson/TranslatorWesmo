@@ -1,0 +1,7 @@
+06000009,6,"Not Applicable",2,"ThrottleRequest0_10000"
+6B2,2,"PackCurrent0_1A",2,"PackInstantaneousVoltage0_1V",3,"Not Applicable",1,"PackStateOfCharge"
+6B3,2,"PackAmphours0_1Ahr",1,"PackHealth",1,"HighTemperatureC",1,"HighTempCellID",1,"LowTemperatureC",1,"LowTempCellID",1,"AverageTemperatureC"
+6B4,1,"InternalTemperatureC",2,"LowCellVoltage0_0001V",1,"LowCellVoltageID",2,"HighCellVoltage0_0001V",1,"HighCellVoltageID"
+6B5,2,"AverageCellVoltage0_0001V"
+06000008,6,"Not Applicable",2,"VCUState"
+06000007,7,"Not Applicable",1,"ErrorCodes"
