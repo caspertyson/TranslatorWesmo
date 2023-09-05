@@ -20,6 +20,23 @@ CREATE TABLE bms (
     AverageCellVoltage0_0001V NUMERIC 
 );
 
+CREATE TABLE errorcodes (
+    Time TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  -- Auto-filled timestamp
+    pedalsensor INTEGER,
+    safetycircuit INTEGER,
+    canfailed INTEGER,
+    looptoolong INTEGER,
+    errorimd INTEGER
+);
 
+CREATE TABLE data (
+    Time TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  -- Auto-filled timestamp
+    speed NUMERIC
+);
+
+CREATE TABLE state (
+    Time TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  -- Auto-filled timestamp
+    vcuState INTEGER
+);
 
 '''

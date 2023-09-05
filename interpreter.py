@@ -77,18 +77,17 @@ def on_message(client, userdata, msg):
         # if rpm request to motor controller
         # if bytes(canid, 'utf-8').hex() == bytes(str(6000009), 'utf-8').hex():
         if canid == "06000009":
-            query = "INSERT INTO data (speed, time) VALUES (%(speed)s, %(timestamp)s)"
+            query = "INSERT INTO data (speed) VALUES (%(speed)s)"
             data = {
                 'speed': int(interpreted_message.get('ThrottleRequest0_10000')),
-                'timestamp': time.time(),
             }
             cur.execute(query, data)
             conn.commit()
 
         if canid == "06000008":
-            query = "INSERT INTO state (state) VALUES (%(speed)s)"
+            query = "INSERT INTO state (vcuState) VALUES (%(vcuState)s)"
             data = {
-                'speed': int(interpreted_message.get('VCUState')),
+                'vcuState': int(interpreted_message.get('VCUState')),
             }
             cur.execute(query, data)
             conn.commit()
@@ -120,7 +119,7 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-client.connect("wesmo.co.nz", 1883, 60)
+client.connect("13.55.132.107", 1883, 60)
 
 client.loop_forever()
 
